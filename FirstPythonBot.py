@@ -4,25 +4,17 @@ from telebot import types
 import telebot;
 bot = telebot.TeleBot('817988164:AAEDUAowZiTowLVs9yl7gv31CgoX_QA0Zjg');
 
-@bot.message_handler(content_types=['text'])
-def get_text_messages(message):
-	if message.text.lower() == "привет":
-			bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
-	elif message.text == "/help":
-			bot.send_message(message.from_user.id, "Напиши привет")
-	else:
-			bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
-
 name = '';
 surname = '';
 age = 0;
 @bot.message_handler(content_types=['text'])
 def start(message):
+	bot.send_message(message.from_user.id, 'Напиши /reg');
 	if message.text == '/reg':
 			bot.send_message(message.from_user.id, "Как тебя зовут?");
 			bot.register_next_step_handler(message, get_name);
 	else:
-			bot.send_message(message.from_user.id, 'Напиши /reg');
+			bot.send_message(message.from_user.id, 'Я тебя не понимаю. Напиши /reg');
 
 def get_name(message):
 	global name;
