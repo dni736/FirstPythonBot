@@ -20,7 +20,7 @@ def get_name(message):
 	global name;
 	name = message.text;
 	bot.send_message(message.from_user.id, 'Какая у тебя фамилия?');
-	bot.register_next_step_handler(message, get_surname);
+	bot.register_next_step_handler(message, get_surnme);
 
 def get_surname(message):
 	global surname;
