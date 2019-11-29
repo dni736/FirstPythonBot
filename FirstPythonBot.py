@@ -20,7 +20,7 @@ def get_name(message):
 	global name;
 	name = message.text;
 	bot.send_message(message.from_user.id, 'Какая у тебя фамилия?');
-	bot.register_next_step_handler(message, get_surnme);
+	bot.register_next_step_handler(message, get_surname);
 
 def get_surname(message):
 	global surname;
@@ -49,5 +49,7 @@ def callback_worker(call):
         bot.send_message(call.message.chat.id, 'Запомню : )');
     elif call.data == "no":
         bot.send_message(call.message.chat.id, 'Заново');
+        bot.send_message(message.from_user.id, "Как тебя зовут?");
+		bot.register_next_step_handler(message, get_name);
 
 bot.polling(none_stop=True, interval=0)
