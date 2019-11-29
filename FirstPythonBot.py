@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import telebot;
-bot = telebot.TeleBot('817988164:AAF1xNleSZocgSEdBpn34GFu5UGKswSzQdM');
+bot = telebot.TeleBot('817988164:AAEDUAowZiTowLVs9yl7gv31CgoX_QA0Zjg');
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
