@@ -49,7 +49,5 @@ def callback_worker(call):
         bot.send_message(call.message.chat.id, 'Запомню : )');
     elif call.data == "no":
         bot.send_message(call.message.chat.id, 'Заново');
-        bot.send_message(message.from_user.id, "Как тебя зовут?");
-		bot.register_next_step_handler(message, get_name);
 
 bot.polling(none_stop=True, interval=0)
