@@ -9,7 +9,6 @@ surname = '';
 age = 0;
 @bot.message_handler(content_types=['text'])
 def start(message):
-	bot.send_message(message.from_user.id, 'Напиши /reg');
 	if message.text == '/reg':
 			bot.send_message(message.from_user.id, "Как тебя зовут?");
 			bot.register_next_step_handler(message, get_name);
@@ -29,12 +28,8 @@ def get_surname(message):
 	bot.register_next_step_handler(message, get_age);
 
 def get_age(message):
-    global age;
-    while age == 0: #проверяем что возраст изменился
-        try:
-             age = int(message.text) #проверяем, что возраст введен корректно
-        except Exception:
-             bot.send_message(message.from_user.id, 'Цифрами, пожалуйста');
+   	global age;
+    age = int(message.text);
     keyboard = types.InlineKeyboardMarkup(); #наша клавиатура
     key_yes = types.InlineKeyboardButton(text='Да', callback_data='yes'); #кнопка «Да»
     keyboard.add(key_yes); #добавляем кнопку в клавиатуру
