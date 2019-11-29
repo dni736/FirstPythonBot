@@ -1,1 +1,1 @@
-web: python3 FirstPythonBot.py
+bot: python3 FirstPythonBot.py
