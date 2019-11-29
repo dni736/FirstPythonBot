@@ -28,7 +28,7 @@ def get_surname(message):
 	bot.register_next_step_handler(message, get_age);
 
 def get_age(message):
-   	global age;
+    global age;
     age = int(message.text);
     keyboard = types.InlineKeyboardMarkup(); #наша клавиатура
     key_yes = types.InlineKeyboardButton(text='Да', callback_data='yes'); #кнопка «Да»
