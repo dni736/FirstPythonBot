@@ -2,7 +2,7 @@
 
 from telebot import types
 import telebot;
-bot = telebot.TeleBot('695844249:AAGYTqvhE00LU2B8pVUpjQPtVnJU4Hz0vGQ');
+bot = telebot.TeleBot('817988164:AAEDUAowZiTowLVs9yl7gv31CgoX_QA0Zjg');
 
 name = '';
 surname = '';
